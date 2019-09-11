@@ -1,9 +1,7 @@
-/* You can add global styles to this file, and also import other style files */
-@import "~@fortawesome/fontawesome-free/css/all.min.css", "assets/scss/reset", "assets/scss/colors", "assets/scss/links";
+@import "~@fortawesome/fontawesome-free/css/all.min.css", "assets/scss/reset", "assets/scss/colors", "assets/scss/links", "assets/scss/components/input-container";
 
 body,
 html {
-  height: 100%;
 }
 
 body {
@@ -37,3 +35,14 @@ small {
 p {
   margin: 0.6em 0;
 }
+
+
+// * { background-color: rgba(255,0,0,.2); }
+// * * { background-color: rgba(0,255,0,.2); }
+// * * * { background-color: rgba(0,0,255,.2); }
+// * * * * { background-color: rgba(255,0,255,.2); }
+// * * * * * { background-color: rgba(0,255,255,.2); }
+// * * * * * * { background-color: rgba(255,255,0,.2); }
+// * * * * * * * { background-color: rgba(255,0,0,.2); }
+// * * * * * * * * { background-color: rgba(0,255,0,.2); }
+// * * * * * * * * * { background-color: rgba(0,0,255,.2); }

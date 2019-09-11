@@ -1,19 +1,37 @@
-<header>
-  <img src="" alt="">
+<header class="header-login">
+  <img class="header-login__logo" src="../../../assets/images/usabilitybox-logo-400.webp" alt="Usability Box logo">
 </header>
-<section>
-  <label for="">Usuário</label>
-  <input type="text">
 
-  <label for="">Senha</label>
-  <input type="text">
+<section class="section-login">
+  <form class="section-login__form">
+    <div class="input-container">
+      <label class="input-container__label" for="username">Usuário</label>
+      <input class="input-container__input" id="username" type="text">
+    </div>
 
-  <a class="link" href="">Redefinir senha</a>
+    <div class="input-container input-container--password">
+      <label class="input-container__label" for="password">Senha</label>
+      <input class="input-container__input" id="password" [type]="!showPassword ? 'password' : 'text'"
+        autocomplete="new-password">
+      <span>
+        <i class="far fa-eye icon-eye" *ngIf="!showPassword; else iconEye" (click)="togglePasswordVisibility()"></i>
+        <ng-template #iconEye>
+          <i class="far fa-eye-slash icon-eye" *ngIf="showPassword " (click)="togglePasswordVisibility()"></i>
+        </ng-template>
+      </span>
+    </div>
 
-  <button type="submit">Login</button>
+    <span class="section-login__form__link">
+      <a class="link" href="">Redefinir senha</a>
+    </span>
+
+    <div class="section-login__form__button">
+      <button class="section-login__form__button__submit" type="submit">Login</button>
+    </div>
+
+    <nav class="section-login__form__link section-login__form__link--new">
+      <a class="link" href="">Criar conta</a>
+    </nav>
+  </form>
+
 </section>
-
-<nav>
-  <a class="link" href="">Criar conta</a>
-  <a class="link" href="dajhfg.com">Afds asd</a>
-</nav>

@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SigninComponent implements OnInit {
 
+  showPassword = false;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  togglePasswordVisibility() {
+    this.showPassword = this.showPassword === true ? false : true;
   }
 
 }
