@@ -1,8 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { LoginModule } from './login/login.module';
+import { RouterModule, PreloadAllModules } from '@angular/router';
+import { ROUTES } from './app.routes';
 
 @NgModule({
   declarations: [
@@ -10,9 +12,15 @@ import { LoginModule } from './login/login.module';
   ],
   imports: [
     LoginModule,
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot(ROUTES, { preloadingStrategy: PreloadAllModules }),
   ],
-  providers: [],
+  providers: [
+    {
+      provide: LOCALE_ID,
+      useValue: 'pt'
+    },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -3,16 +3,17 @@
 </header>
 
 <section class="section-login">
-  <form class="section-login__form">
+  <form class="section-login__form" [formGroup]="loginForm" (ngSubmit)="submitForm()">
     <div class="input-container">
       <label class="input-container__label" for="username">Usuário</label>
-      <input class="input-container__input" id="username" type="text">
+      <input class="input-container__input" id="username" type="text" autofocus autocomplete="username"
+        formControlName="username">
     </div>
 
     <div class="input-container input-container--password">
       <label class="input-container__label" for="password">Senha</label>
       <input class="input-container__input" id="password" [type]="!showPassword ? 'password' : 'text'"
-        autocomplete="new-password">
+        autocomplete="new-password" formControlName="password">
       <span>
         <i class="far fa-eye icon-eye" *ngIf="!showPassword; else iconEye" (click)="togglePasswordVisibility()"></i>
         <ng-template #iconEye>
@@ -26,11 +27,11 @@
     </span>
 
     <div class="section-login__form__button">
-      <button class="section-login__form__button__submit" type="submit">Login</button>
+      <button class="section-login__form__button__submit" type="submit" [disabled]="loginForm.invalid">Login</button>
     </div>
 
     <nav class="section-login__form__link section-login__form__link--new">
-      <a class="link" href="">Criar conta</a>
+      <a class="link" (click)="signup()">Criar conta</a>
     </nav>
   </form>
 
