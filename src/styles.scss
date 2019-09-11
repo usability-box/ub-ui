@@ -1,5 +1,5 @@
-@import "~@fortawesome/fontawesome-free/css/all.min.css", "assets/scss/reset", "assets/scss/colors", "assets/scss/links", "assets/scss/components/input-container";
-
+@import "~@fortawesome/fontawesome-free/css/all.min.css", "assets/scss/reset", "assets/scss/mixins/flexbox",
+  "assets/scss/mixins/utilities", "assets/scss/colors", "assets/scss/links", "assets/scss/components/input-container";
 body,
 html {
 }
@@ -35,7 +35,6 @@ small {
 p {
   margin: 0.6em 0;
 }
-
 
 // * { background-color: rgba(255,0,0,.2); }
 // * * { background-color: rgba(0,255,0,.2); }

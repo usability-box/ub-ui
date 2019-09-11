@@ -1,7 +1,8 @@
 .link {
   text-decoration: underline;
   color: #007fff;
-
+  cursor: pointer;
+  @include transition();
   &:visited {
     color: lighten(#4e7cfa, 10%) !important;
   }

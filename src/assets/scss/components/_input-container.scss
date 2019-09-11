@@ -11,7 +11,7 @@
       right: 5px;
       bottom: 7px;
       cursor: pointer;
-
+      @include transition();
       &:hover {
         color: darken($color: #757575, $amount: 15);
       }
@@ -29,14 +29,14 @@
     display: block;
     transition: all ease-out 0.5s;
     font-size: 1em;
-    height: 30px;
+    height: 34px;
     padding: 1px 5px;
-    // min-width: 300px;
+    width: 100%;
     &:hover {
       border-color: #757575;
     }
 
-    &:focus {
+    &:focus{
       background-color: #f2f2f2;
     }
   }
