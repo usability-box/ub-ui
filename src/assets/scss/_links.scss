@@ -1,0 +1,20 @@
+.link {
+  text-decoration: underline;
+  color: #007fff;
+
+  &:visited {
+    color: lighten(#4e7cfa, 10%) !important;
+  }
+
+  &:hover {
+    color: #f69522 !important;
+  }
+
+  &:active {
+    color: rgb(0, 182, 15) !important;
+  }
+
+  &:focus {
+    color: rgb(0, 182, 15) !important;
+  }
+}
