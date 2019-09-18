@@ -7,7 +7,7 @@ import { StartComponent } from './start/start.component';
 import { HeaderComponent } from './header/header.component';
 import { LOGIN_ROUTES } from './login.routes';
 import { RouterModule } from '@angular/router';
-
+import { NgxMaskModule } from 'ngx-mask';
 
 
 @NgModule({
@@ -19,6 +19,7 @@ import { RouterModule } from '@angular/router';
   ],
   imports: [
     SharedModule,
+    NgxMaskModule.forRoot(),
     RouterModule.forChild(LOGIN_ROUTES),
   ],
   exports: [

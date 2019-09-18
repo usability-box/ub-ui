@@ -14,7 +14,7 @@ export const LOGIN_ROUTES: Routes = [
         data: {animation: 'SigninPage'}
       },
       {
-        path: 'new',
+        path: 'novo-usuario',
         component: SignupComponent,
         data: {animation: 'SignupPage'}
       }
