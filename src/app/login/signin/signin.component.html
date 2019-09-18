@@ -1,8 +1,5 @@
-<header class="header-login">
-  <img class="header-login__logo" src="../../../assets/images/usabilitybox-logo-400.webp" alt="Usability Box logo">
-</header>
 
-<section class="section-login">
+<section class="section-login" [@inOut]="'in'">
   <form class="section-login__form" [formGroup]="loginForm" (ngSubmit)="submitForm()">
     <div class="input-container">
       <label class="input-container__label" for="username">Usuário</label>
@@ -14,7 +11,7 @@
       <label class="input-container__label" for="password">Senha</label>
       <input class="input-container__input" id="password" [type]="!showPassword ? 'password' : 'text'"
         autocomplete="new-password" formControlName="password">
-      <span>
+      <span *ngIf="loginForm.controls['password'].value !== ''" >
         <i class="far fa-eye icon-eye" *ngIf="!showPassword; else iconEye" (click)="togglePasswordVisibility()"></i>
         <ng-template #iconEye>
           <i class="far fa-eye-slash icon-eye" *ngIf="showPassword " (click)="togglePasswordVisibility()"></i>
@@ -30,8 +27,8 @@
       <button class="section-login__form__button__submit" type="submit" [disabled]="loginForm.invalid">Login</button>
     </div>
 
-    <nav class="section-login__form__link section-login__form__link--new">
-      <a class="link" (click)="signup()">Criar conta</a>
+    <nav>
+      <p class="section-login__form__signin">Não possui conta? <a class="link" [routerLink]="['/login', 'new']">Cadastre-se</a></p>
     </nav>
   </form>
 

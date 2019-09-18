@@ -1,10 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { fadeInAnimation } from 'src/app/shared/animations/fadein.animation';
 @Component({
   selector: 'ub-signin',
   templateUrl: './signin.component.html',
-  styleUrls: ['./signin.component.scss']
+  styleUrls: ['./signin.component.scss'],
+  animations: [
+    fadeInAnimation
+  ]
 })
 export class SigninComponent implements OnInit {
 
@@ -12,9 +15,7 @@ export class SigninComponent implements OnInit {
 
   loginForm: FormGroup;
 
-  constructor(
-    private router: Router,
-  ) { }
+  constructor() { }
 
   ngOnInit() {
     this.loginForm = new FormGroup({
@@ -27,12 +28,6 @@ export class SigninComponent implements OnInit {
     this.showPassword = this.showPassword === true ? false : true;
   }
 
-  submitForm(){
-    console.log('Formulário enviado');
-  }
-
-  signup() {
-    this.router.navigate(['/signup']);
-  }
+  submitForm() { }
 
 }
