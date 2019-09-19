@@ -7,12 +7,14 @@ import { AppComponent } from './app.component';
 import { LoginModule } from './login/login.module';
 import { RouterModule, PreloadAllModules } from '@angular/router';
 import { ROUTES } from './app.routes';
+import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
+    CoreModule,
     LoginModule,
     BrowserModule,
     BrowserAnimationsModule,

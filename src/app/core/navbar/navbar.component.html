@@ -1,0 +1,86 @@
+<nav class="navbar">
+  <div class="navbar__logo">
+    <a [routerLink]="['/']">
+      <img src="../../../assets/images/logoname-50.webp" alt="Logo Usability Box" height="38px">
+    </a>
+  </div>
+</nav>
+
+<!-- Sidebar  -->
+<nav class="sidebar" id="sidebar" [ngClass]="isOpen() ? 'active sidebar--closed' : ''">
+
+  <button type="button" class="sidebar__menu-toggle navbar-btn" (click)="toggleMenu()"
+    [ngClass]="isOpen() ? 'sidebar__menu-toggle--closed' : ''">
+    <span class="sidebar__menu-toggle__bar"></span>
+    <span class="sidebar__menu-toggle__bar"></span>
+    <span class="sidebar__menu-toggle__bar"></span>
+  </button>
+
+  <!-- Header  -->
+  <div class="sidebar__header">
+    <div class="sidebar__header__logo" [ngClass]="!isOpen() ? 'sidebar__header__logo--closed' : ''">
+      <a [routerLink]="['/']">
+        <img src="../../../assets/images/menu-closed.webp" alt="Logo Usability Box">
+      </a>
+    </div>
+
+    <div class="sidebar__header__logo-menu" [ngClass]="isOpen() ? 'sidebar__header__logo-menu--open' : ''">
+      <a [routerLink]="['/']">
+        <img src="../../../assets/images/menu-open.webp" alt="Logo Usability Box">
+      </a>
+    </div>
+  </div>
+
+  <!-- Menu  -->
+  <ul class="sidebar__menu list-unstyled components">
+    <li class="sidebar__menu__item sidebar__menu__item--active">
+      <a class="sidebar__menu__item__link sidebar__menu__item__link--toggle dropdown-toggle" data-toggle="collapse"
+        aria-expanded="true" (click)="collapse()" [ngClass]="teste ? 'collapse' : ''">
+        <i class="sidebar__menu__item__link__icon fas fa-home"></i>
+        Início
+      </a>
+      <ul class="sidebar__menu__item__submenu collapse list-unstyled" [ngClass]="teste ? 'show' : ''" id="homeSubmenu">
+        <li class="sidebar__menu__item__submenu__item">
+          <a class="sidebar__menu__item__submenu__item__link" href="#">Início 1</a>
+        </li>
+        <li class="sidebar__menu__item__submenu__item">
+          <a class="sidebar__menu__item__submenu__item__link" href="#">Início 2</a>
+        </li>
+      </ul>
+    </li>
+
+
+
+    <li class="sidebar__menu__item">
+      <a class="sidebar__menu__item__link" (click)="collapse()" [ngClass]="teste ? 'collapse' : ''">
+        <i class="sidebar__menu__item__link__icon fas fa-tasks"></i>
+        Testes
+      </a>
+
+    </li>
+
+    <li>
+      <a href="#">
+        <i class="fas fa-briefcase"></i>
+        Questionário
+      </a>
+      <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle" (click)="collapse()"
+        [ngClass]="teste ? 'collapse' : ''">
+        <i class="fas fa-copy"></i>
+        Sair
+      </a>
+      <ul class="collapse list-unstyled" id="pageSubmenu">
+        <li>
+          <a href="#">Page 1</a>
+        </li>
+        <li>
+          <a href="#">Page 2</a>
+        </li>
+        <li>
+          <a href="#">Page 3</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+</nav>
