@@ -13,6 +13,8 @@ import { EMAIL_PATTERN } from 'src/app/shared/validators/email.regex.validator';
 })
 export class SignupComponent implements OnInit {
 
+  msgs;
+
   signupForm: FormGroup;
 
   static equalsTo(group: AbstractControl): { [key: string]: boolean } {
@@ -49,6 +51,14 @@ export class SignupComponent implements OnInit {
 
   submitForm() {
     console.log('Formulário enviado');
+  }
+
+  show() {
+    this.msgs.push({ severity: 'error', summary: 'Info Message', detail: 'PrimeNG rocks' });
+  }
+
+  hide() {
+    this.msgs = [];
   }
 
 }

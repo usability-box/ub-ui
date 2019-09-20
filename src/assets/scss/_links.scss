@@ -1,21 +1,21 @@
 .link {
   text-decoration: underline;
-  color: #007fff;
+  color:  #01A562;
   cursor: pointer;
   @include transition();
   &:visited {
-    color: lighten(#4e7cfa, 10%) !important;
+    color:  #01A562;
   }
 
   &:hover {
-    color: #f69522 !important;
+    color:  #01A562;
   }
 
   &:active {
-    color: rgb(0, 182, 15) !important;
+    color:  #01A562;
   }
 
   &:focus {
-    color: rgb(0, 182, 15) !important;
+    color:  #01A562;
   }
 }

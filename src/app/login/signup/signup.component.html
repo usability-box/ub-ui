@@ -1,51 +1,47 @@
-<section class="section-card" [@inOut]="'in'">
+<section class="section-card">
   <form class="section-card__form" [formGroup]="signupForm" (ngSubmit)="submitForm()">
     <h1 class="section-card__form__title">Cadastro de usuário</h1>
-    <div class="input-container">
-      <label class="input-container__label" for="nome">Nome completo</label>
-      <input class="input-container__input" id="nome" type="text" autofocus autocomplete="name" formControlName="nome">
-    </div>
 
     <div class="input-container">
-      <label class="input-container__label" for="cpf">CPF</label>
-      <input class="input-container__input" id="cpf" type="text" formControlName="cpf" mask="000.000.000-00"
-        placeholder="___.___.___-__">
+      <label class="input-container__label" for="nome">Nome completo</label><br>
+      <input id="nome" type="text" size="30" pInputText formControlName="nome">
     </div>
 
     <div class="input-container">
-      <label class="input-container__label" for="email">E-mail</label>
-      <input class="input-container__input" id="email" type="text" autocomplete="email" formControlName="email">
+      <label class="input-container__label" for="cpf">CPF</label><br>
+      <p-inputMask mask="999.999.999-99" size="30"></p-inputMask>
     </div>
 
     <div class="input-container">
-      <label class="input-container__label" for="usuario">Usuário</label>
-      <input class="input-container__input" id="usuario" type="text" autocomplete="nickname" formControlName="usuario">
+      <label class="input-container__label" for="email">E-mail</label><br />
+      <input id="nome" type="text" size="30" id="email" pInputText formControlName="email">
     </div>
 
-    <div class="section-card__form__password"
-      [ngClass]="{'section-card__form__password--error':signupForm.hasError('senhaDiferente')}">
-      <div class="input-container">
-        <label class="input-container__label" for="senha">Senha</label>
-        <input class="input-container__input" id="senha" type="password" formControlName="senha" autocomplete="none">
-      </div>
-
-      <div class="input-container">
-        <label class="input-container__label" for="confirmasenha">Confirme a senha</label>
-        <input class="input-container__input" id="confirmasenha" type="password" formControlName="confirmasenha"
-          autocomplete="none">
-      </div>
-      <p *ngIf="signupForm.hasError('senhaDiferente')" class="section-card__form__password__message" [@inOut]="'in'"><i
-          class="fas fa-times-circle"></i> As senhas não conferem</p>
+    <div class="input-container">
+      <label class="input-container__label" for="usuario">Usuário</label><br>
+      <input id="nome" type="text" size="30" id="usuario" pInputText formControlName="usuario">
     </div>
 
-
-    <div class="section-card__form__button">
-      <button class="section-card__form__button__submit" type="submit"
-        [disabled]="signupForm.invalid">Cadastrar</button>
+    <div class="input-container">
+      <label class="input-container__label" for="senha">Senha</label><br>
+      <input type="password" id="senha" pPassword formControlName="senha" size="30" [feedback]="false" />
     </div>
 
-    <nav>
-      <p class="section-card__form__signin">Voltar para <a class="link" [routerLink]="['/login']">Login</a></p>
-    </nav>
+    <div class="input-container">
+      <label class="input-container__label" for="confirmasenha">Confirme a senha</label><br>
+      <input type="password" id="confirmasenha" pPassword formControlName="confirmasenha" size="30"
+        [feedback]="false" />
+    </div>
+
+    <p-message *ngIf="signupForm.hasError('senhaDiferente')" severity="error" text="As senhas não conferem"></p-message>
+
+    <div style="margin-top: 20px;">
+      <p-button label="Cadastrar" type="submit" styleClass="ui-button-success" [disabled]="signupForm.invalid">
+      </p-button>
+    </div>
+
+    <div style="position:fixed; top:20px; right: 30px;">
+      <p-button label="Fazer Login" type="submit" styleClass="ui-button-secondary" [routerLink]="['/login']"></p-button>
+    </div>
   </form>
 </section>

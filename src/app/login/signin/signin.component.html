@@ -1,35 +1,22 @@
-
-<section class="section-login" [@inOut]="'in'">
+<section class="section-login">
   <form class="section-login__form" [formGroup]="loginForm" (ngSubmit)="submitForm()">
     <div class="input-container">
-      <label class="input-container__label" for="username">Usuário</label>
-      <input class="input-container__input" id="username" type="text" autofocus autocomplete="username"
-        formControlName="username">
+      <label class="input-container__label" for="username">Usuário</label><br>
+      <input id="username" type="text" size="30" pInputText formControlName="username">
     </div>
 
-    <div class="input-container input-container--password">
-      <label class="input-container__label" for="password">Senha</label>
-      <input class="input-container__input" id="password" [type]="!showPassword ? 'password' : 'text'"
-        autocomplete="new-password" formControlName="password">
-      <span *ngIf="loginForm.controls['password'].value !== ''" >
-        <i class="far fa-eye icon-eye" *ngIf="!showPassword; else iconEye" (click)="togglePasswordVisibility()"></i>
-        <ng-template #iconEye>
-          <i class="far fa-eye-slash icon-eye" *ngIf="showPassword " (click)="togglePasswordVisibility()"></i>
-        </ng-template>
-      </span>
+    <div class="input-container">
+      <label class="input-container__label" for="password">Senha</label><br>
+      <input type="password" id="password" pPassword formControlName="password" size="30" [feedback]="false" />
     </div>
 
     <span class="section-login__form__link">
-      <a class="link" href="">Redefinir senha</a>
+      <a class="link" href="">Redefinir senha</a><br>
+      <a class="link" [routerLink]="['/login', 'novo-usuario']">Cadastre-se</a>
     </span>
 
-    <div class="section-login__form__button">
-      <button class="section-login__form__button__submit" type="submit" [disabled]="loginForm.invalid">Login</button>
+    <div style="margin-top: 20px;">
+      <p-button label="Entrar" type="submit" styleClass="ui-button-success" [disabled]="loginForm.invalid"></p-button>
     </div>
-
-    <nav>
-      <p class="section-login__form__signin">Não possui conta? <a class="link" [routerLink]="['/login', 'novo-usuario']">Cadastre-se</a></p>
-    </nav>
   </form>
-
 </section>

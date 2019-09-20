@@ -21,9 +21,10 @@
     "@angular/platform-browser-dynamic": "~8.2.5",
     "@angular/router": "~8.2.5",
     "@fortawesome/fontawesome-free": "^5.10.2",
-    "bootstrap": "^4.3.1",
-    "rxjs": "~6.4.0",
     "ngx-mask": "^8.0.5",
+    "primeicons": "^2.0.0",
+    "primeng": "^8.0.3",
+    "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"
   },
